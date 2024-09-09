@@ -22,7 +22,7 @@ const logIn = catchError(async (req, res, next) => {
 
   jwt.sign(
     { userId: user.id, name: user.userName, confirmEmail: user.confirmEmail },
-    "awq",
+    process.env.JWT_KEY,
     (error, token) => {
       return user.confirmEmail
         ? res.status(200).json({ message: "logged in", token })

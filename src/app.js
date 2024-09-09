@@ -1,6 +1,7 @@
 import express from "express";
 import { dbConn } from "../database/dbConnection.js";
 import { bootstrab } from "./bootstrab.js";
+import 'dotenv/config'
 const app = express();
 const port = 3000;
 app.use(express.json());
